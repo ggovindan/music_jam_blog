@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% comment %}
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block blog_entries %}
+{% for object in object_list %}
+  <div class="post">
+    <h2><a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a></h2>
+    <p class="meta">
+      {{ object.created }} |
+      Tagged under {{  object.tags.all|join:", " }}
+    </p>
+    {{ object.body|markdown }}
+  </div>
+{% endfor %}
+{% endblock %}
+
+{% endcomment %}
+
+
+{% load django_markdown %}
+{% load embed_video_tags %}
+
+{% block blog_entries %}
+{% for object in object_list %}
+  <div class="post">
+    <h2>{{ object.title }}</h2>
+    <p class="meta">{{ object.created }}</p>
+    
+    {% video object.video as my_video %}
+    {% video my_video "medium" %}
+  {% endvideo %}
+
+    
+    {{ object.body|markdown }}
+
+  </div>
+{% endfor %}
+{% endblock %}

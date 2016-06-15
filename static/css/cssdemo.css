@@ -1,0 +1,58 @@
+*{margin:0;padding:0;}
+body{color:#111;font-family:"cambria",arial;font-size:14px}
+a{color:#111;text-decoration:none}
+a:hover{color:#d45300}
+a img{border:0}
+tr.bar{top:0;width:100%}
+tr.bar td {background: #e0e0e0 url() repeat-x 0 0;line-height: 1.7}
+#bartop{/*width:960px;*/width:100%;height:38px;}
+#bartop ul{}
+#bartop ul li{list-style:none;float:left}
+.ratetext,.rate,.choice,.left,.right,.download,.share,.homeback,.back,.tweet,.logo,.recent{margin:6px 10px 0 5px;line-height:26px}
+.share{position:relative;width:103px;}
+.share a{display:block;text-align:center;display:block;background:url() 0 0 no-repeat; width:103px;height:32px;color:#000;text-shadow:0px 1px 0px #fff;}
+.share a:hover{}
+.share ul{padding:10px;border:1px solid #ddd;background:#efefef;display:none;position:absolute;top:32px;}
+.share ul li{border-bottom:1px solid #ddd}
+.share ul li a{padding:0 5px 0 28px;width:140px;background:none;text-align:left;}
+.feed {background:url(rss.gif) 0 5px no-repeat}
+.twitter {background:url(twet.gif) 0 5px no-repeat}
+.facebook {background:url(fb.gif) 0 5px no-repeat}
+.delicious {background:url(deli.gif) 0 5px no-repeat}
+.google {background:url(gl.gif) 0 5px no-repeat}
+.stumble {background:url(sb.gif) 0 5px no-repeat}
+.friendfeed {background:url(ff.gif) 0 5px no-repeat}
+.technorati {background:url(tek.gif) 0 5px no-repeat}
+.download{width:103px;}
+.download a{text-align:center;display:block;background:url() 0 0 no-repeat;  height:32px;color:#000;text-shadow:0px 1px 0px #fff;}
+.download a:hover{}
+.right a{position:absolute;right:10px}
+.left a{position:absolute;right:50px}
+
+iframe.templatedemo {width:100%;height:100%}
+
+.homeback a{width:200px;display:block;background:url() 0 0 no-repeat;  height:32px;color:#000;text-shadow:0px 1px 0px #fff;}
+.back a{width:126px;display:block;background:url() 0 0 no-repeat;  height:32px;color:#000;text-shadow:0px 1px 0px #fff;}
+.logo a{width:212px;display:block;background:url(logodemo.gif) 0 0 no-repeat;  height:32px;text-indent:-9999px}
+.left{position:absolute; top:0; right:10px;}
+.right{position:absolute; top:0; right:10px;}
+.left a{width:24px;display:block;background:url(d-prev.png) 0 0 no-repeat;  height:32px;text-indent:-9999px}
+.right a{width:24px;display:block;background:url(d-next.png) 0 0 no-repeat;  height:32px;text-indent:-9999px}
+.rate {margin-top:14px;}
+.tweet {margin-top:14px;}
+.recent{position:relative;width:103px;}
+.recent a{display:block;text-align:center;display:block;background:url(sharedemo.png) 0 0 no-repeat; width:103px;height:32px}
+.recent a:hover{background-position:left bottom}
+.recent ul{padding:10px;border:1px solid #ddd;background:#efefef;display:none;position:absolute;top:32px;}
+.recent ul li{}
+.recent ul li a{padding:5px 0 0 55px;width:140px;background:none;text-align:left;}
+.recent ul li img{
+width:50px;
+height:50px;
+float:left;
+}
+.recent ul li .imgRecent{
+display:inline-block;
+border-bottom:1px solid #ddd;
+padding:2px;
+}
