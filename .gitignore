@@ -1,0 +1,7 @@
+# ignore eclipse related files
+.project
+.pydevproject
+
+# ignore pyc files
+*.pyc
+*__pycache__*
