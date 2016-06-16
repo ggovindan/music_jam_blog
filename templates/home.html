@@ -1,20 +1,7 @@
-{% extends "base.html" %}
+{% extends "content.html" %}
 {% comment %}
-{% extends "base.html" %}
-{% load django_markdown %}
-
-{% block blog_entries %}
-{% for object in object_list %}
-  <div class="post">
-    <h2><a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a></h2>
-    <p class="meta">
-      {{ object.created }} |
-      Tagged under {{  object.tags.all|join:", " }}
-    </p>
-    {{ object.body|markdown }}
-  </div>
-{% endfor %}
-{% endblock %}
+Everythin inside this block in commented out
+This is purely for comments
 
 {% endcomment %}
 
@@ -24,17 +11,68 @@
 
 {% block blog_entries %}
 {% for object in object_list %}
+
+<div class='post-outer'>
+<article class='post hentry'>
+<!--<a name='1145437796717184415'></a> -->
+<header class='entry-header'>
+<h1 class='post-title entry-title'>
+  <a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a>
+</h1>
+<div class='entry-meta'>
+       <i class='fa fa-tachometer'></i>
+{{ object.created }}	&nbsp;&nbsp; | Tagged under {{object.tags.all|join:", "}}
+<!-- TODO comments to be handled later       <i class='fa fa-comment'></i>
+  <a href='http://typefocus-theme.blogspot.com/2010/09/sample-post-with-links-paragraphs-and.html#comment-form' onclick=''>1 comment</a> -->
+</div>
+</header>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+<div id='{{object.entry_id}}'>
+  <div class="separator" style="clear: both; text-align: center;">
+    {% video object.video as my_video %}
+    {% video my_video "320x240" %}
+    {% endvideo %}
+  </div>
+  {{ object.body|markdown }}</div>
+<script type='text/javascript'>createSummaryAndThumb('{{object.entry_id}}');</script>
+<div style='float:right;padding-right:0px;margin-top:10px;'>
+<a class='continue-reading' href="{% url "entry_detail" slug=object.slug %}">Continue reading &rarr;</a>
+</div>
+<div style='clear: both;'></div>
+</div>
+<footer class='entry-meta'>
+<i class='fa fa-paperclip'></i>
+<a href='http://typefocus-theme.blogspot.com/search/label/Web%20Design' rel='tag'>Web Design</a>
+</footer>
+</article>
+<div style='clear: both;'></div>
+</div>
+
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+{% comment %}
+
+{% block blog_entries %}
+{% for object in object_list %}
   <div class="post">
-    <h2>{{ object.title }}</h2>
-    <p class="meta">{{ object.created }}</p>
-    
+    <h2><a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a></h2>
+    <p class="meta">{{ object.created }} | Tagged under {{object.tags.all|join:", "}}</p>
+
     {% video object.video as my_video %}
     {% video my_video "medium" %}
   {% endvideo %}
 
-    
+
     {{ object.body|markdown }}
 
   </div>
 {% endfor %}
 {% endblock %}
+{% endcomment %}
