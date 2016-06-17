@@ -8,6 +8,7 @@
 <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'/>
 <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'/>
 <link href="/feed/" rel="alternate" type="application/rss+xml" title="Q Blog Feed" />
+<link rel="icon" href="{% static "icons/favicon.ico" %}?v=2">
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 <script type="text/javascript">
 (function()
@@ -1280,8 +1281,12 @@ function createSummaryAndThumb(pID){
 		summ = summary_img;
 	}
 
-	var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
+	var summary = imgtag + '</iframe><div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
 	div.innerHTML = summary;
+  if(pID.localeCompare('a6e5a6dd-bffd-4a17-adec-d3fe62080d6a') == 0)
+  {
+    div.innerHTML = "PRRRRRRRRR";
+  }
 }
 
 //]]>
@@ -1353,9 +1358,8 @@ function createSummaryAndThumb(pID){
 </div><!-- #maincontentarea -->
 </div><!-- #primarypart -->
 <div class='widget-area' id='secondarypart' role='complementary'>
-<div class='widget widget_search'>
-</div>
 <div class='sidebar section' id='sidebartop'><div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<!--identify how to find out the popular posts -->
 </div>
 <div class='widget HTML' data-version='1' id='HTML1'>
 <h2 class='title'>Recent Posts</h2>

@@ -9,4 +9,4 @@ class VBlogIndex(generic.ListView):
 
 class VBlogDetail(generic.DetailView):
     model = models.Entry
-    template_name = "post.html"
+    template_name = "entry_detail.html"
