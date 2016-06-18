@@ -13,3 +13,9 @@ Tasks in progress
 Tasks for future
 1. dockerize the entire project for easier installation in cloud
 2. hosting it on cloudfoundy and my own openstack
+
+
+requirements:
+pip install django-markdown
+pip install django-embed-video
+pip install Pillow

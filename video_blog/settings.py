@@ -78,6 +78,10 @@ STATICFILES_DIRS = [
 
 WSGI_APPLICATION = 'video_blog.wsgi.application'
 
+# Media root folder for storing About Pictures
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
+MEDIA_URL = '/static/images/'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
