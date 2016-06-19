@@ -1,0 +1,5 @@
+Django==1.9.6
+django-markdown
+Pillow
+django-embed-video
+
