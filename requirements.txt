@@ -4,7 +4,6 @@ dj-database-url==0.4.1
 Django==1.9.7
 django-embed-video==1.1.0
 django-markdown==0.8.4
-gnureadline==6.3.3
 gunicorn==19.6.0
 itsdangerous==0.24
 Jinja2==2.8
@@ -12,9 +11,8 @@ Markdown==2.6.6
 MarkupSafe==0.23
 pexpect==4.0.1
 pickleshare==0.7.2
-Pillow==3.2.0
+Pillow
 ptyprocess==0.5.1
-redis==2.10.5
 requests==2.10.0
 simplegeneric==0.8.1
 traitlets==4.2.1
