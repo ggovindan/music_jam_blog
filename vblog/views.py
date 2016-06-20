@@ -5,7 +5,7 @@ from . import models
 class VBlogIndex(generic.ListView):
     queryset = models.Entry.objects.published()
     template_name = "home.html"
-    paginate_by = 2
+    paginate_by = 10
 
 class VBlogDetail(generic.DetailView):
     model = models.Entry
