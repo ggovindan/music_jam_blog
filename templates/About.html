@@ -15,15 +15,16 @@ This is purely for comments
   <article class='post hentry'>
     <header class='entry-header'>
       <h1 class='post-title entry-title'>
-        About the Author
+        {{ flatpage.title }}
       </h1>
     </header>
     <div class='post-header-line-1'></div>
     <div class='post-body entry-content'>
       <div>
         <div class="separator" style="clear: both; text-align: center;">
-          <img src="{{objects.image}}" class="pbtthumbimg"/>
+          <!-- <img src="{{objects.image}}" class="pbtthumbimg"/> -->
         </div>
+        <div>{{ flatpage.content }}</div>
         <div>{{ objects.about_body|markdown }}</div>
       </div>
       <div style='clear: both;'></div>

@@ -36,6 +36,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 2
 
 # Application definition
 
@@ -49,6 +50,8 @@ INSTALLED_APPS = (
     'vblog',
     'django_markdown',
     'embed_video',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,6 +63,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'video_blog.urls'
