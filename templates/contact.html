@@ -1,0 +1,36 @@
+{% extends "content.html" %}
+{% comment %}
+Everythin inside this block in commented out
+This is purely for comments
+
+{% endcomment %}
+
+
+{% load django_markdown %}
+{% load embed_video_tags %}
+
+{% block blog_entries %}
+
+<div class='post-outer'>
+  <article class='post hentry'>
+    <header class='entry-header'>
+      <h1 class='post-title entry-title'>
+        {{ flatpage.title }}
+      </h1>
+    </header>
+    <div class='post-header-line-1'></div>
+    <div class='post-body entry-content'>
+      <div>
+        <div class="separator" style="clear: both; text-align: center;">
+          <!-- <img src="{{objects.image}}" class="pbtthumbimg"/> -->
+        </div>
+        <div>{{ flatpage.content }}</div>
+        <div>{{ objects.about_body|markdown }}</div>
+      </div>
+      <div style='clear: both;'></div>
+    </div>
+  </article>
+  <div style='clear: both;'></div>
+</div>
+
+{% endblock %}
