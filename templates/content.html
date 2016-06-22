@@ -1327,8 +1327,8 @@ function createSummaryAndThumb(pID){
 <div class='nbttopmenutop section' id='nbttopmenutop'><div class='widget LinkList' data-version='1' id='LinkList7'>
 <div class='widget-content'>
 <ul>
-{% block content %}
-<li><a href="{{ about_author.get_absolute_url }}">Home</a></li>
+{% block shortcut %}
+<li><a href="{% url 'index' %}">Home</a></li>
 <li><a href="{{ about_author.get_absolute_url }}/about">About</a></li>
 <li><a href="{{ about_author.get_absolute_url }}/contact/">Contact</a></li>
 {% endblock %}
@@ -1354,14 +1354,15 @@ function createSummaryAndThumb(pID){
   </div>
 
 </div>
-
+{% block bottom %}
 <div style='clear: both;'></div>
 <div class='blog-pager' id='blog-pager'>
 <span id='blog-pager-older-link'>
 <a class='blog-pager-older-link' href='http://link/that/will/show/older/posts' id='Blog1_blog-pager-older-link' title='Older Posts'>Older Posts</a>
 </span>
-<a class='home-link' href='http://localhost:8000'>Home</a>
+<a class='home-link' href="{% url 'index' %}">Home</a>
 </div>
+{% endblock %}
 <div class='clear'></div>
 <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
 </div><!-- #maincontentarea -->
