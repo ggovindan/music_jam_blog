@@ -1342,31 +1342,7 @@ function createSummaryAndThumb(pID){
 </header><!-- #masthead -->
 <!-- ALL CONTENTS OF THE PAGE ARE BELOW HERE -->
 <div class='site-content' id='bmainsitecontent'>
-<div class='content-area' id='primarypart'>
-<div class='site-main' id='maincontentarea' role='main'>
-<div class='mainblogsec section' id='mainblogsec'>
-  <div class='widget Blog' data-version='1' id='Blog1'>
-    <div class='blog-posts hfeed'>
-<!--Beggining of first article -->
   {% block blog_entries %} {% endblock %}
-
-    </div>
-  </div>
-
-</div>
-{% block bottom %}
-<div style='clear: both;'></div>
-<div class='blog-pager' id='blog-pager'>
-<span id='blog-pager-older-link'>
-<a class='blog-pager-older-link' href='http://link/that/will/show/older/posts' id='Blog1_blog-pager-older-link' title='Older Posts'>Older Posts</a>
-</span>
-<a class='home-link' href="{% url 'index' %}">Home</a>
-</div>
-{% endblock %}
-<div class='clear'></div>
-<script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
-</div><!-- #maincontentarea -->
-</div><!-- #primarypart -->
 <div class='widget-area' id='secondarypart' role='complementary'>
 <div class='sidebar section' id='sidebartop'><div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
 <!--identify how to find out the popular posts -->
@@ -1382,7 +1358,6 @@ function createSummaryAndThumb(pID){
 <div class='clear'></div>
 </div>
 </div></div>
-</div><!-- #secondarypart -->
 </div><!-- #bmainsitecontent -->
 </div><!-- #bpagecontent -->
 <footer class='site-footer' id='colophon' role='contentinfo'>

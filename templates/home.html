@@ -8,43 +8,79 @@ This is purely for comments
 
 {% load django_markdown %}
 {% load embed_video_tags %}
+<div class='content-area' id='primarypart'>
+<div class='site-main' id='maincontentarea' role='main'>
+<div class='mainblogsec section' id='mainblogsec'>
+  <div class='widget Blog' data-version='1' id='Blog1'>
+    <div class='blog-posts hfeed'>
 
-{% block blog_entries %}
-{% for object in object_list %}
+  {% block blog_entries %}
+  {% for object in entry_list %}
 
-<div class='post-outer'>
-  <article class='post hentry'>
-    <!--<a name='1145437796717184415'></a> -->
-    <header class='entry-header'>
-      <h1 class='post-title entry-title'>
-        <a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a>
-      </h1>
-      <div class='entry-meta'>
-        <i class='fa fa-tachometer'></i>
-        {{ object.created }}	&nbsp;&nbsp; | Tagged under {{object.tags.all|join:", "}}
-        <!-- TODO comments to be handled later       <i class='fa fa-comment'></i>
-        <a href='http://typefocus-theme.blogspot.com/2010/09/sample-post-with-links-paragraphs-and.html#comment-form' onclick=''>1 comment</a> -->
-      </div>
-    </header>
-    <div class='post-header-line-1'></div>
-    <div class='post-body entry-content'>
-      <div id='{{object.entry_id}}'>
-        <div class="separator" style="clear: both; text-align: center;">
-          {% video object.video as my_video %}
-          {% video my_video "320x240" %}
-          {% endvideo %}
+  <div class='post-outer'>
+    <article class='post hentry'>
+      <!--<a name='1145437796717184415'></a> -->
+      <header class='entry-header'>
+        <h1 class='post-title entry-title'>
+          <a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a>
+        </h1>
+        <div class='entry-meta'>
+          <i class='fa fa-tachometer'></i>
+          {{ object.created }}	&nbsp;&nbsp; | Tagged under {{object.tags.all|join:", "}}
+          <!-- TODO comments to be handled later       <i class='fa fa-comment'></i>
+          <a href='http://typefocus-theme.blogspot.com/2010/09/sample-post-with-links-paragraphs-and.html#comment-form' onclick=''>1 comment</a> -->
         </div>
-        <div>{{ object.body|markdown }}</div>
+      </header>
+      <div class='post-header-line-1'></div>
+      <div class='post-body entry-content'>
+        <div id='{{object.entry_id}}'>
+          <div class="separator" style="clear: both; text-align: center;">
+            {% video object.video as my_video %}
+            {% video my_video "320x240" %}
+            {% endvideo %}
+          </div>
+          <div>{{ object.body|markdown }}</div>
+        </div>
+        <script type='text/javascript'>createSummaryAndThumb('{{object.entry_id}}');</script>
+        <div style='float:right;padding-right:0px;margin-top:10px;'>
+          <a class='continue-reading' href="{% url "entry_detail" slug=object.slug %}">Continue reading &rarr;</a>
+        </div>
+        <div style='clear: both;'></div>
       </div>
-      <script type='text/javascript'>createSummaryAndThumb('{{object.entry_id}}');</script>
-      <div style='float:right;padding-right:0px;margin-top:10px;'>
-        <a class='continue-reading' href="{% url "entry_detail" slug=object.slug %}">Continue reading &rarr;</a>
-      </div>
-      <div style='clear: both;'></div>
-    </div>
-  </article>
-  <div style='clear: both;'></div>
-</div>
+    </article>
+    <div style='clear: both;'></div>
+  </div>
 
-{% endfor %}
-{% endblock %}
+  {% endfor %}
+  <!--Beggining of first article -->
+  <div style='clear: both;'></div>
+  <div class='blog-pager' id='blog-pager'>
+  <span id='blog-pager-older-link'>
+  {% if is_paginated %}
+  <div class="pagination">
+    <span class="page-links">
+      <span class="page-current">
+          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;|
+      </span>
+      <span> &nbsp;&nbsp; </span>
+      {% if page_obj.has_previous %}
+      <a class='blog-pager-older-link' href='/?page={{ page.obj.previous_page_number }}' id='Blog1_blog-pager-older-link' title='Older Posts'> Newer posts</a>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <span> &nbsp;&nbsp; </span>
+        <a href="/?page={{ page_obj.next_page_number }}"> older posts</a>
+      {% endif %}
+  </span>
+  </div>
+  {% endif %}
+
+  </div> <!-- 'blog-posts hfeed' -->
+</div> <!-- 'widget Blog' -->
+
+  </div>
+
+  <div class='clear'></div>
+  <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
+  </div><!-- #maincontentarea -->
+  </div><!-- #primarypart -->
+  {% endblock %}
