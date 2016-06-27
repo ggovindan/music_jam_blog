@@ -8,6 +8,7 @@ This is purely for comments
 
 {% load django_markdown %}
 {% load embed_video_tags %}
+
 <div class='content-area' id='primarypart'>
 <div class='site-main' id='maincontentarea' role='main'>
 <div class='mainblogsec section' id='mainblogsec'>
@@ -57,21 +58,31 @@ This is purely for comments
   <div class='blog-pager' id='blog-pager'>
   <span id='blog-pager-older-link'>
   {% if is_paginated %}
-  <div class="pagination">
+  <ul class="pagination">
+    <span class="page-current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+    <br/>
+    {% if page_obj.has_previous %}
+    <li><a href='/?page={{ page.obj.previous_page_number }}'>❮</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="/?page={{ page_obj.next_page_number }}">❯</a></li>
+    {% endif %}
+  </ul>
+  <!--<div class="pagination">
     <span class="page-links">
       <span class="page-current">
           Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;|
       </span>
-      <span> &nbsp;&nbsp; </span>
       {% if page_obj.has_previous %}
-      <a class='blog-pager-older-link' href='/?page={{ page.obj.previous_page_number }}' id='Blog1_blog-pager-older-link' title='Older Posts'> Newer posts</a>
+      <a class='mybutton' href='/?page={{ page.obj.previous_page_number }}' id='Blog1_blog-pager-older-link' title='Older Posts'> Newer posts</a>
       {% endif %}
       {% if page_obj.has_next %}
-      <span> &nbsp;&nbsp; </span>
-        <a href="/?page={{ page_obj.next_page_number }}"> older posts</a>
+        <a class='mybutton' href="/?page={{ page_obj.next_page_number }}"> older posts</a>
       {% endif %}
   </span>
-  </div>
+</div> -->
   {% endif %}
 
   </div> <!-- 'blog-posts hfeed' -->

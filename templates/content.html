@@ -80,8 +80,34 @@
  })();
  </script>
 <meta content='blogger' name='generator'/>
-<title>GuruViolin</title>
+<title>Jam@Ravi</title>
 <style id='page-skin-1' type='text/css'>
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+ul.pagination li a.active {
+    background-color: #eee;
+    color: black;
+    border: 1px solid #ddd;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
 <!--
 
 body#layout ul{list-style-type:none;list-style:none}
@@ -1312,7 +1338,7 @@ function createSummaryAndThumb(pID){
 <div id='header-inner'>
 <div class='titlewrapper'>
 <h1 class='site-title'>
-<a href="{% url 'index' %}">Guru</a>
+<a href="{% url 'index' %}">Jam @ Ravi</a>
 </h1>
 </div>
 <h2 class='site-description'>My experiments with Music</h2>
