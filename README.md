@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project is to build a video blog website powered by Django(1.9.7).
 The current version is functional. But a work is still in progress.
 
@@ -19,3 +20,7 @@ requirements:
 pip install django-markdown
 pip install django-embed-video
 pip install Pillow
+=======
+# music_jam_blog
+A blogging site for music jam
+>>>>>>> c5f358cc3db9fb356589c5119f0aa6e771233428
