@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATABASES = {
     'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'mydb',
+                'NAME': 'jamatravi',
                 'USER': 'gugovind',
                } 
 }
@@ -132,3 +132,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+DATABASES['default'] =  dj_database_url.config()
