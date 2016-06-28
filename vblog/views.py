@@ -14,12 +14,6 @@ class VBlogDetail(generic.DetailView):
     model = models.Entry
     template_name = "entry_detail.html"
 
-class About(generic.ListView):
-    queryset = models.About.objects.published()
-    print("inside About view queryset={}".format(queryset))
-    model = models.About
-    template_name = "About.html"
-
 class UpcomingEvents(generic.ListView):
     queryset = models.UpcomingEvents.objects.latest()
     paginated_by = 4

@@ -9,11 +9,6 @@ class EntryQuerySet(models.QuerySet):
     def published(self):
         return self.filter(publish=True)
 
-class AboutAuthor(models.QuerySet):
-    def published(self):
-        print("ABOUTAUTHOR: {}".format(self.all()))
-        return self.all()
-
 class EventQuerySet(models.QuerySet):
     def latest(self):
         return self.all().filter(event_date__gt=timezone.now())
@@ -24,19 +19,6 @@ class Tag(models.Model):
     def __str__(self):
         return self.slug
 
-class About(models.Model):
-    image = models.CharField(max_length=200)
-    #image = models.ImageField()
-    about_body = models.TextField()
-    slug = models.SlugField(max_length=200, unique=False)
-
-    objects = AboutAuthor.as_manager()
-
-    def __str__(self):
-        return self.image
-
-    def get_absolute_url(self):
-        return reverse("about_author", kwargs={"slug": self.slug})
 
 class Entry(models.Model):
     title = models.CharField(max_length=200)
