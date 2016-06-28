@@ -1384,6 +1384,9 @@ function createSummaryAndThumb(pID){
 <h2 class='title'>Upcoming Events</h2>
 <div class='widget-content'>
   {% block upcoming_event %}
+  {% for object in entry_list %}
+  {% endfor %}
+  {% endblock %}
 
 <script>var numposts =5; var showpostdate = false; var showpostsummary = false; var numchars = 100; </script>
 <!-- <script src="http://typefocus-theme.blogspot.com/feeds/posts/default?orderby=published&alt=json-in-script&callback=rp"> -->
