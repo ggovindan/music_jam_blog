@@ -19,3 +19,9 @@ class About(generic.ListView):
     print("inside About view queryset={}".format(queryset))
     model = models.About
     template_name = "About.html"
+
+class UpcomingEvents(generic.ListView):
+    queryset = models.UpcomingEvents.objects.latest()
+    paginated_by = 4
+    template_name = "content.html"
+    context_object_name = "upcoming_events"
