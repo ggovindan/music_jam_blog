@@ -56,42 +56,53 @@ This is purely for comments
   <!--Beggining of first article -->
   <div style='clear: both;'></div>
   <div class='blog-pager' id='blog-pager'>
-  <span id='blog-pager-older-link'>
-  {% if is_paginated %}
-  <ul class="pagination">
-    <span class="page-current">
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    <span id='blog-pager-older-link'>
+      {% if is_paginated %}
+      <ul class="pagination">
+        <span class="page-current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+        <br/>
+        {% if page_obj.has_previous %}
+        <li><a href='/?page={{ page.obj.previous_page_number }}'>❮</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="/?page={{ page_obj.next_page_number }}">❯</a></li>
+        {% endif %}
+      </ul>
+      {% endif %}
     </span>
-    <br/>
-    {% if page_obj.has_previous %}
-    <li><a href='/?page={{ page.obj.previous_page_number }}'>❮</a></li>
-    {% endif %}
-    {% if page_obj.has_next %}
-    <li><a href="/?page={{ page_obj.next_page_number }}">❯</a></li>
-    {% endif %}
-  </ul>
-  <!--<div class="pagination">
-    <span class="page-links">
-      <span class="page-current">
-          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;|
-      </span>
-      {% if page_obj.has_previous %}
-      <a class='mybutton' href='/?page={{ page.obj.previous_page_number }}' id='Blog1_blog-pager-older-link' title='Older Posts'> Newer posts</a>
-      {% endif %}
-      {% if page_obj.has_next %}
-        <a class='mybutton' href="/?page={{ page_obj.next_page_number }}"> older posts</a>
-      {% endif %}
-  </span>
-</div> -->
-  {% endif %}
-
-  </div> <!-- 'blog-posts hfeed' -->
-</div> <!-- 'widget Blog' -->
-
   </div>
 
+  </div> <!-- 'blog-posts hfeed' -->
+
+    <div class='widget-area' id='secondarypart' role='complementary'>
+      <div class='sidebar section' id='sidebartop'>
+        <div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+          <h2>Upcoming events</h2>
+          <div class='widget-content popular-posts'>
+            <ul>
+              {% for object in event_list %}
+              <!-- start of a upcoming event -->
+              <li>
+                <div class='item-content'>
+                  <div class='item-title'>
+                    <a href="{% url "event_detail" slug=object.slug %}">{{ object.title }}</a>
+                  </div>
+                </div>
+                <div style='clear: both;'></div>
+              </li>
+              <!-- end of a upcoming event -->
+              {% endfor %}
+            </ul>
+            <div class='clear'></div>
+          </div>
+        </div>
+      </div>
+    </div>
   <div class='clear'></div>
   <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
   </div><!-- #maincontentarea -->
   </div><!-- #primarypart -->
+
   {% endblock %}

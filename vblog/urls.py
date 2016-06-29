@@ -21,6 +21,7 @@ from django.contrib.flatpages import views as flatviews
 urlpatterns = [
     url(r'^$', views.VBlogIndex.as_view(), name="index"),
     url(r'^entry/(?P<slug>\S+)$', views.VBlogDetail.as_view(), name="entry_detail"),
+    url(r'^event/(?P<slug>\S+)$', views.EventDetail.as_view(), name="event_detail"),
     url(r'^about/$', flatviews.flatpage, {'url': '/about/'}, name='about'),
     url(r'^feed/$', feed.LatestPosts(), name="feed"),
 ]
