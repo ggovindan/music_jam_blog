@@ -15,18 +15,19 @@ This is purely for comments
   <article class='post hentry'>
     <header class='entry-header'>
       <h1 class='post-title entry-title'>
-        <a href="{% url "entry_detail" slug=object.slug %}">{{ object.title }}</a>
+        <a href="{% url "event_detail" slug=object.slug %}">{{ object.title }}</a>
       </h1>
     </header>
     <div class='post-header-line-1'></div>
     <div class='post-body entry-content'>
       <div id='{{object.entry_id}}'>
-        <div class="separator" style="clear: both; text-align: center;">
+        <hr/><h4>Event Date: {{object.event_date}}</h4>
+        <!--<div class="separator" style="clear: both; text-align: center;">
           {% video object.video as my_video %}
           {% video my_video "medium" %}
           {% endvideo %}
-        </div>
-        <div>{{ object.body|markdown }}</div>
+        </div> -->
+        <div>{{ object.details|markdown }}</div>
       </div>
       <div style='clear: both;'></div>
     </div>
