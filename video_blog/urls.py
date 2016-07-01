@@ -21,6 +21,6 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^markdown/', include('django_markdown.urls')),
-    url(r'^about/', include('django.contrib.flatpages.urls')),
+    #url(r'^about/', include('django.contrib.flatpages.urls')),
     url(r'^', include('vblog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
