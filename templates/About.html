@@ -23,8 +23,9 @@ This is purely for comments
       <div>
         <div class="separator" style="clear: both; text-align: center;">
           <!-- <img src="{{objects.image}}" class="pbtthumbimg"/> -->
+          <img src="{{ flatpage.image.url }}" class="pbtthumbimg" />
         </div>
-        <div>{{ flatpage.content }}</div>
+        <div>{{ flatpage.content|markdown }}</div>
         <div>{{ objects.about_body|markdown }}</div>
       </div>
       <div style='clear: both;'></div>

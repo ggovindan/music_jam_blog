@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from . import views, feed
-from django.contrib.flatpages import views as flatviews
+#from django.contrib.flatpages import views as flatviews
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     url(r'^$', views.VBlogIndex.as_view(), name="index"),
     url(r'^entry/(?P<slug>\S+)$', views.VBlogDetail.as_view(), name="entry_detail"),
     url(r'^event/(?P<slug>\S+)$', views.EventDetail.as_view(), name="event_detail"),
-    url(r'^about/$', flatviews.flatpage, {'url': '/about/'}, name='about'),
+    #url(r'^about/$', flatviews.flatpage, {'url': '/about/'}, name='about'),
+    url(r'^about/$', views.flatpage, {'url': '/about/'}, name="about_detail"),
     url(r'^feed/$', feed.LatestPosts(), name="feed"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

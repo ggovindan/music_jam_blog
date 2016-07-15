@@ -1,8 +1,19 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from embed_video.fields import EmbedVideoField
+from django.contrib.flatpages.models import FlatPage as FlatPageOrig
 import uuid
 import datetime
+
+class FlatPage(FlatPageOrig):
+    image = models.ImageField(upload_to="about")
+
+    def __str__(self):
+        return self.image.url
+
+    def get_absolute_url(self):
+        print("get_absolute_url().image.url={}".format(self.image.url))
+        return reverse("about_detail", kwargs={"slug:": self.image.url})
 
 class EntryQuerySet(models.QuerySet):
     def published(self):
