@@ -11,10 +11,6 @@ class FlatPage(FlatPageOrig):
     def __str__(self):
         return self.image.url
 
-    def get_absolute_url(self):
-        print("get_absolute_url().image.url={}".format(self.image.url))
-        return reverse("about_detail", kwargs={"slug:": self.image.url})
-
 class EntryQuerySet(models.QuerySet):
     def published(self):
         return self.filter(publish=True)
